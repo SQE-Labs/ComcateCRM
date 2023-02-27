@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Comcate">
+	<test thread-count="5" name="Test">
+		<classes>
+
+
+			<class name="TestCasesCRM.Login">
+				<methods>
+					<include name="LoginAgency" />
+					<!--	<include name="LoginAgencyStage"></include>-->
+                        <!--<include name="LoginAgencyCI"></include>-->
+				</methods>
+			</class>
+
+
+			<!--<class name="TCsNewAgencySetup.AppPreRequisites">
+				<methods>
+					<include name="AgencySetup_VerifyCreationOf50PlusCases" />
+					<include name="AgencySetup_VerifyCreationOf50PlusSubmissions" />
+					<include name="AgencySetup_VerifyCaseCreationWithEntityViolation" />
+				</methods>
+			</class>-->
+
+		<!--
+		<class name="TestCasesCRM.Categories">
+				<methods>
+					<include name="Categories_PreRequisite" />
+					<include name="Categories_VerifyDefaultCategory" />
+					<include name="Categories_UpdateDefaultResolutionTime" />
+					<include name="Categories_OpenCreateACategoryPopup" />
+					<include name="Categories_VerifyResolutionTimeOnCreateCategoryPopup" />
+					<include name="Categories_AddKeywordsAndCustomFields" />
+					<include name="Categories_VerifyLinkedEmailTemplates" />
+					<include name="Categories_VerifyCategoryCreation" />
+					<include name="Categories_VerifyNoCategoryCreationOnCancel" />
+					<include name="Categories_CantCreateCategoryWithExistingName" />
+					<include name="Categories_VerifyUpdatedCategory" />
+					<include name="Categories_VerifyAccurateCount" />
+				</methods>
+			</class>
+
+
+
+			<class name="TestCasesCRM.SubmissionAssignment">
+				<methods>
+					<include name="SubmissionAssignment_OpenEditAssignmentPopup" />
+					<include name="SubmissionAssignment_VerifyNoUpdationWithoutARule" />
+					<include name="SubmissionAssignment_OpenCreateRulePopup" />
+					<include name="SubmissionAssignment_AddMultipleCriterias" />
+					<include name="SubmissionAssignment_EditAddedRule" />
+					<include name="SubmissionAssignment_DeleteAddedRule" />
+					<include name="SubmissionAssignment_AssignmentRuleUnderInactiveSection" />
+				</methods>
+			</class>
+
+
+			<class name="TestCasesCRM.CSPInternal">
+				<methods>
+					<include name="CSPInternal_Prerequisites" />
+					<include name="CSPInternal_VerifyCSPOpensUp" />
+					<include name="CSPInternal_VerifyPostAnonymouslycheckbox" />
+					<include name="CSPInternal_VerifyCustomerInformationTile" />
+					<include name="CSPInternal_AddExistingCustomer" />
+					<include name="CSPInternal_VerifyCategoriesList" />
+					<include name="CSPInternal_SearchAndAddCategory" />
+					<include name="CSPInternal_LocationRequiredValCategory" />
+					<include name="CSPInternal_CategoryWithLocationIncluded" />
+					<include name="CSPInternal_VerifyIssueDescription" />
+					<include name="CSPInternal_AddMultipleTags" />
+					<include name="CSPInternal_AddAttachments" />
+					<include name="CSPInternal_VerifySubmissionCreation" />
+				</methods>
+			</class>
+
+
+		<class name="TestCasesCRM.CSDP">
+				<methods>
+					<include name="CSDP_OpenCSDPAfterSubmissionCreation" />
+					<include name="CSDP_ChangeDueByDate" />
+					<include name="CSDP_VerifyInternalNotesContent" />
+					<include name="CSDP_VerifyEscalatedIssue" />
+					<include name="CSDP_VerifyReasonWithInternalNotes" />
+					<include name="CSDP_VerifyNoEscalationOnCancel" />
+					<include name="CSDP_VerifyDirectionToCoDP" />
+					<include name="CSDP_VerifyDirectionToCSLPFromTags" />
+					<include name="CSDP_VerifyAddedAttachments" />
+					<include name="CSDP_VerifyAddedInternalNote" />
+					<include name="CSDP_VerifyUpdatedNote" />
+					<include name="CSDP_VerifyUserIsAbleToPrintCSD" />
+					<include name="CSDP_VerifyMultipleTagsAddition" />
+					<include name="CSDP_VerifyAdditionOfTasks" />
+					<include name="CSDP_VerifyUpdationAndDeletionOfTasks" />
+					<include name="CSDP_VerifyClosedSubmission" />
+					<include name="CSDP_VerifyReopenedSubmission" />
+				</methods>
+			</class>
+
+
+			<class name="TestCasesCRM.CreateAndLinkCase">
+				<methods>
+					<include name="CreateAndLinkCase_PreRequisite" />
+					<include name="CreateAndLinkCase_OpenCCPToLinkTheCase" />
+					<include name="CreateAndLinkCase_VerifyAutopopulatedData" />
+					<include name="CreateAndLinkCase_VerifyLinkedCase" />
+					<include name="CreateAndLinkCase_VerifyDirectionToAssociatedSubmission" />
+					<include name="CreateAndLinkCase_VerifyDirectionToAssociatedCase" />
+				</methods>
+			</class>
+
+
+			<class name="TestCasesCRM.SubmissionSettings">
+				<methods>
+					<include name="SubmissionSettings_VerifyToggleButtonsState" />
+					<include name="SubmissionSettings_VerifyDiscardButtonFunctionality" />
+					<include name="SubmissionSettings_VerifyChangesGetSaved" />
+					<include name="SubmissionSettings_VerifyAutomaticClosingOfLinkedSubmission" />
+					<include name="SubmissionSettings_VerifyCaseDoesntCloseForNoToggle" />
+					<include name="SubmissionSettings_VerifyselectionOfAnonymousToggles" />
+					<include name="SubmissionSettings_VerifyPostAnonymouslyForYesToggle" />
+					<include name="SubmissionSettings_VerifyPostAnonymouslyForNoToggle" />
+				</methods>
+			</class>
+
+			<class name="TestCasesCRM.CSLP">
+				<methods>
+					<include name="CSLP_VerifyCSLPOpensUP" />
+					<include name="CSLP_VerifyPrimaryFilters" />
+					<include name="CSLP_VerifyTagFilter" />
+					<include name="CSLP_VerifyNavigationFromPagination" />
+					<include name="CSLP_VerifyDescendingOrderOfSubmissions" />
+					<include name="CSLP_VerifyAscendingOrderOfCases" />
+					<include name="CSLP_VerifyDeletedSubmission" />
+					<include name="CSLP_VerifyTotalCountOfCases" />
+					<include name="CSLP_VerifyClearAllFiltersLinkText" />
+					<include name="CSLP_VerifyClearAllFiltersAfterClicking" />
+					<include name="CSLP_VerifyApplicationOfsecondaryFilters" />
+					<include name="CSLP_VerifyFilterGetsRemoved" />
+					<include name="CSLP_VerifyFilterAndSearch" />
+					<include name="CSLP_VerifyRemovalOfColumns" />
+					<include name="CSLP_VerifyRestorationOfColumns" />
+					<include name="CSLP_VerifySavedFilter" />
+					<include name="CSLP_VerifyDeletedFilter" />
+					<include name="CSLP_VerifyCSVFile" />
+					<include name="CSLP_VerifyDirectionToRespectiveSubmission" />
+					<include name="CSLP_VerifySubmissionsForMineButton" />
+				</methods>
+			</class>
+
+
+			<class name="TestCasesCRM.DashboardCRM">
+				<methods>
+					<include name="Dashboard_VerifyCRMToggleButton" />
+					<include name="Dashboard_VerifyDirectionToCRMDashboard" />
+					<include name="Dashboard_VerifyDirectionToCSLPForAssignedToMELink" />
+					<include name="Dashboard_VerifyDirectionToCSLPForMyDepartment" />
+					<include name="Dashboard_VerifyDirectionToCSLPForMyAgency" />
+					<include name="Dashboard_VerifyTheCountOfSubmissions" />
+				</methods>
+			</class>
+
+
+
+			<class name="TestCasesCRM.ReportsCRM">
+				<methods>
+					<include name="Reports_PreRequisite" />
+					<include name="Reports_VerifyAdditionOfNewReports" />
+					<include name="Reports_VerifyEditedQSReport" />
+					<include name="Reports_VerifyCRMToggleForReports" />
+					<include name="Reports_VerifyAllCRMReports" />
+				</methods>
+			</class>-->
+
+
+
+
+
+
+
+			<!--  //////////////////  Admin Part flows //////////////////// -->
+
+
+				<!--<class name="TestCasesCRM.CSPExternal">
+				<methods>
+					<include name="CSPExternal_PreRequisite_OpenReportAnIssuePage" />
+					<include name="CSPExternal_VerifyIssueDescription" />
+					<include name="CSPExternal_VerifyAddedAttachments" />
+					<include name="CSPExternal_VerifyCorrespondingCategoryToKeyword" />
+					<include name="CSPExternal_VerifyNoLocationSection" />
+					<include name="CSPExternal_VerifyRequiredLocationSection" />
+					<include name="CSPExternal_VerifyNonMandatoryLocationSection" />
+					<include name="CSPExternal_VerifyMandatoryFieldsForNonAnonymous" />
+					<include name="CSPExternal_VerifyEmailFieldPreference" />
+					<include name="CSPExternal_VerifyAnonymousSubmission" />
+					<include name="CSPExternal_VerifyNonAnonymousSubmission" />
+				</methods>
+			</class>-->
+
+
+
+			<!--<class name="TestCasesCRM.CreateCRMUser">
+				<methods>
+					<include name="CreateCRMUser_CreateStandardUser" />
+					<include name="CreateCRMUser_CreateProductAdminUser" />
+					<include name="CreateCRMUser_UpdateCEOnlyUserToCRMOnly" />
+					<include name="CreateCRMUser_VerifyCRMProductAccessToCRMUser" />
+					<include name="CreateCRMUser_VerifyNoCEAccessToCRMOnlyUser" />
+				</methods>
+			</class>
+
+		-->
+
+
+			<class name="TestCasesCRM.SMSAndEmailVerification">
+				<methods>
+					<include name="ComposeMessage" />
+					<include name="ComposeMail" />
+				</methods>
+			</class>
+			</classes>
+	</test>
+</suite>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Comcate">
+	<test thread-count="5" name="Test">
+		<classes>
+
+				<class name="TestCasesCRM.Login">
+                    <methods>
+                      <include name="LoginAdmin" />
+                      <!--  <include name="LoginAgencyStage" />-->
+                    </methods>
+                </class>
+
+			<!-- <class name="TestCasesCRM.CSP_CSDP">
+                 <methods>
+                     <include name="CSP_CSDP_CreateSubmissionWithAnonymousUser" />
+                      <include name="CSP_CSDP_CreateSubmissionWithoutContact" />
+                     <include name="CSP_CSDP_CreateSubmissionWithoutLocation" />
+                     <include name="CSP_CSDP_CreateSubmissionWithoutTags" />
+                 </methods>
+             </class>
+
+			<class name="TestCasesCRM.SMSAndEmailVerification">
+				<methods>
+					<include name="ComposeMessage" />
+					<include name="ComposeMail" />
+					<include name="VerifyMailReceivedByAssignee" />
+					<include name="VerifyMailReceivedByCollaborator" />
+				</methods>
+			</class>
+
+			<class name="TCsNewAgencySetup.AgencyCreation">
+				<methods>
+					<include name="AgencyCreation_OpenCreateAgencyPopup" />
+					<include name="AgencyCreation_ConfigureCE" />
+					<include name="AgencyCreation_ConfigureCRM" />
+					<include name="AgencyCreation_VerifyNewAgencyCreation" />
+				</methods>
+			</class>-->
+
+			<class name="TCsNewAgencySetup.AppPreRequisites">
+				<methods>
+					<!--<include name="AgencySetup_VerifyAppConfigurations" />
+					<include name="AgencySetup_VerifyCreationOfLCFs" />
+					<include name="AgencySetup_VerifyUploadedMapLayer" />
+					<include name="AgencySetup_VerifyUploadedAgencyBoundary" />
+					<include name="AgencySetup_VerifyUploadedAgencyParcelFile" />
+					<include name="AgencySetup_VerifyCreatedUser" />
+					<include name="AgencySetup_VerifyAdditionOfFAActivity" />
+					<include name="AgencySetup_VerifyCreationOfMunicipalCode" />
+					<include name="AgencySetup_VerifyCreationOfViolations" />
+					<include name="AgencySetup_VerifyInvalidDispositionCreation" />
+					<include name="AgencySetup_VerifyCreationOfNonHTMLNotice" />
+					<include name="AgencySetup_VerifyCreationOfHTMLNotice" />
+					<include name="AgencySetup_VerifyCreationOfFADocument" />
+					<include name="AgencySetup_VerifyCreationOfCategories" />
+					<include name="AgencySetup_VerifySavedSubmissionSettings" />
+					<include name="AgencySetup_VerifySuccessfulDirectionToCCP" />-->
+					<include name="AgencySetup_VerifyCreationOf50PlusCases" />
+					<include name="AgencySetup_VerifyCreationOf50PlusSubmissions" />
+					<include name="AgencySetup_VerifyCaseCreationWithEntityViolation" />
+				</methods>
+			</class>
+
+		</classes>
+	</test>
+</suite>

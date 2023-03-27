@@ -104,8 +104,8 @@ public class TemplateManagement extends TemplateMangementUtils {
 		TemplateMangementUtils.TemplateMangement_VerifyTemplateAdditionOfTemplate();
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals(TemplateGridNameLbl, templateName);
-		softAssert.assertEquals(TemplateGridSubLine, rndSubLine);
-		softAssert.assertEquals(TemplateGridSubLine, rndSubLine);
+		softAssert.assertEquals(TemplateGridSubLine.trim(), rndSubLine.trim());
+//		softAssert.assertEquals(TemplateGridSubLine, rndSubLine);
 		softAssert.assertEquals(TemplateGridRelatedDoc.contains((DocumentJellyFish.replace(".jpg",""))), true);
 		softAssert.assertEquals(TemplateGridRelatedDoc.contains((DocumentPanda.replace(".jpg",""))), true);
 		softAssert.assertEquals(TemplateGridLastUpdated.contains(LoggedUser), true);
@@ -115,7 +115,7 @@ public class TemplateManagement extends TemplateMangementUtils {
 	
 	@Test(priority = 7)
 	public static void TemplateMangement_VerifyEditTheTemplate() throws InterruptedException, AWTException {
-		extentTest = extent.startTest(" TemplateMangement_VerifyTemplateAdditionAndEditTemplate ");
+		extentTest = extent.startTest(" TemplateMangement_VerifyEditTheTemplate ");
 		extentTest.setDescription("Verify that respective 'Edit <Template Name>' popup opens up, when user clicks on 'Edit' icon of any template and able to edit template on 'Template Management' page.");
 		
 //		Login.LoginAgencyStage();
@@ -126,7 +126,7 @@ public class TemplateManagement extends TemplateMangementUtils {
 		
 		TemplateMangementUtils.TemplateMangement_VerifyEditTheTemplate();
 		SoftAssert softAssert = new SoftAssert();
-		softAssert.assertEquals(TemplateGridSubLine, rndSubLine);
+		softAssert.assertEquals(TemplateGridSubLine.trim(), rndSubLine.trim());
 		softAssert.assertEquals(TemplateNameStatus, false);
 		softAssert.assertEquals(actualTemplateName,EditTemplateHeader);
 		softAssert.assertAll();
@@ -135,8 +135,8 @@ public class TemplateManagement extends TemplateMangementUtils {
 	
 	@Test(priority = 8)
 	public static void TemplateMangement_VerifyErrorMessgeOnAdditionOfExistingTemplate() throws InterruptedException, AWTException {
-		extentTest = extent.startTest(" TemplateMangement_VerifyTemplateAdditionAndEditTemplate ");
-		extentTest.setDescription("Verify that user able to activate/deactivate the template on 'Email Template' Page");
+		extentTest = extent.startTest(" TemplateMangement_VerifyErrorMessgeOnAdditionOfExistingTemplate ");
+		extentTest.setDescription("Verify that an error message appears & Template does not get created, when user clicks on 'Save' button, after entering existing data in 'Name' field, on 'Create Template' popup.");
 		
 //		Login.LoginAgencyStage();
 //		TemplateMangement_PreRequisite();	
@@ -150,7 +150,7 @@ public class TemplateManagement extends TemplateMangementUtils {
 	
 	@Test(priority = 9)
 	public static void TemplateMangement_VerifyActivateAndDeActivateTemplate() throws InterruptedException, AWTException {
-		extentTest = extent.startTest(" TemplateMangement_VerifyTemplateAdditionAndEditTemplate ");
+		extentTest = extent.startTest(" TemplateMangement_VerifyActivateAndDeActivateTemplate ");
 		extentTest.setDescription("Verify that user able to activate/deactivate the template on 'Email Template' Page");
 		
 //		Login.LoginAgencyStage();

@@ -3,8 +3,8 @@ package BrowsersBase;
 public interface DataInterface{
 
 	public static String browserMain = "CHROME";
-    public static String RunEnvironment = "QA";	
-    //public static String RunEnvironment = "Stage";	
+   // public static String RunEnvironment = "QA";	
+    public static String RunEnvironment = "Stage";	
 	//public static String RunEnvironment = "CI";	
     public static String AgencyName = "AlphaSquad";
 

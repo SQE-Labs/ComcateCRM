@@ -15,7 +15,7 @@ public class AppPreRequisites extends AppPreRequisitesUtils {
 		extentTest.setDescription(
 				" Verify that all the corresponding configurations appear, after user enters the Agency from Admin Login. ");
 		//String RandomAgencyName =  RandomAgencyName;
-		AppPreRequisitesUtils.AgencySetup_VerifyAppConfigurations("AlphaSquad");
+		AppPreRequisitesUtils.AgencySetup_VerifyAppConfigurations("NAVA_CGWoKuEe");
 		
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals(GetCRMTrace, "CRM");

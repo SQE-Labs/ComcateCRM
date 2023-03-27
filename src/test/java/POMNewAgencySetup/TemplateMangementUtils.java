@@ -109,6 +109,7 @@ public class TemplateMangementUtils extends AgencyCreationUtils {
 	
 	
 	        public static void TemplateMangement_PreRequisite() throws InterruptedException {
+	        	driver.navigate().refresh();
 	        	Thread.sleep(10000);
 	        	WebDriverWaits.scrolltoUp();
 	        	CRMCommonMethods.NavigateTo_AgencySetup();
@@ -186,12 +187,17 @@ public class TemplateMangementUtils extends AgencyCreationUtils {
 			public static void TemplateMangement_VerifyAdditionofMultipleDocTemplatePOpup () throws InterruptedException, AWTException{
 				
 				String path1 = System.getProperty("user.dir") + "\\TestData\\Jellyfish_11zon.jpg";
-				CRMCommonMethods.AddTemplateFiles(AddDocument,path1);
 				Thread.sleep(2000);
+				System.out.println(path1);
+				CRMCommonMethods.AddTemplateFiles(AddDocument,path1);
+				
+				Thread.sleep(3000);
 				
 				String path2 = System.getProperty("user.dir") + "\\TestData\\Panda_11zon.jpg";
+				Thread.sleep(2000);
+				System.out.println(path2);
 				CRMCommonMethods.AddTemplateFiles(AddDocument,path2);
-				Thread.sleep(2000); 
+				Thread.sleep(3000); 
 				filescount = driver.findElements(AddedFiles).size();
 				filesCountCheck = filescount == 2;
 			}
@@ -206,7 +212,7 @@ public class TemplateMangementUtils extends AgencyCreationUtils {
 				WebDriverWaits.SendKeys(TemplateNameTxt, templateName);
 				Thread.sleep(2000);
 				WebDriverWaits.ScrollIntoView(EmailSubLineInput);
-				rndSubLine = RandomStrings.RequiredString(3) + "EmailSubjectLine";
+				rndSubLine = RandomStrings.RequiredCharacters(3) + "EmailSubjectLine";
 				Thread.sleep(5000);
 				WebDriverWaits.Clear(EmailSubLineInput);
 				Thread.sleep(2000);

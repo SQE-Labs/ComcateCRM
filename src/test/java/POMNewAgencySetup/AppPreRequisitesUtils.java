@@ -22,6 +22,7 @@ public class AppPreRequisitesUtils extends AgencyCreationUtils {
 	public static By AppMenuIcon = By.xpath("//div[@class='app-header__menu__icon']");
 	public static By AgencySetupIcon = By
 			.xpath("//a[@class='tools-dropdown__tool-img tools-dropdown__tool-img--setup']");
+	public static By AgencySetUpIconLbl = By.xpath("//label[text()='Agency Setup']//preceding-sibling::a");
 	public static By LocationManagementTab = By.xpath("//label[text()='Location Management']");
 	public static By LocationandMapsTab = By.xpath("//label[text()='Location and Maps']");
 	public static By LCFTab = By.xpath("//div[text()='Location Custom Fields']");

@@ -165,6 +165,13 @@ public class WebDriverWaits extends BrowsersInvoked {
 		jse.executeScript("window.scrollBy(0,-400)");
 	}
 	
+	
+	public static void scrolltoUpCustom(int x , int y) {
+		
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("window.scrollBy("+x+",-"+y+")");
+	}
+	
 	public static WebElement FindElementByXPath(String selector) {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(selector)));
 		WebElement ele = driver.findElement(By.xpath(selector));

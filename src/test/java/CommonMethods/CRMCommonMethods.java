@@ -12,6 +12,8 @@ import POMCRM.CSDPUtils;
 import POMCRM.CSPExternalUtils;
 import POMCRM.CSPInternalUtils;
 import POMNewAgencySetup.AppPreRequisitesUtils;
+import POMNewAgencySetup.NotificationMangementUtils;
+import POMNewAgencySetup.SLAUtils;
 import POMNewAgencySetup.TemplateMangementUtils;
 import TestCasesCRM.CSPInternal;
 import TestCasesCRM.Categories;
@@ -566,10 +568,12 @@ public class CRMCommonMethods {
 	public static void NavigateTo_AgencySetup () throws InterruptedException {
 		
 		WebDriverWaits.ScrollIntoView(AppPreRequisitesUtils.AppMenuIcon);
-		Thread.sleep(2000);
-		WebDriverWaits.ClickOn(AppPreRequisitesUtils.AppMenuIcon);
 		Thread.sleep(5000);
-		WebDriverWaits.ClickOn(AppPreRequisitesUtils.AgencySetupIcon);
+		WebDriverWaits.ClickByJsExecuter(AppPreRequisitesUtils.AppMenuIcon);
+		Thread.sleep(5000);
+		WebDriverWaits.ScrollIntoView(AppPreRequisitesUtils.AgencySetUpIconLbl);
+		Thread.sleep(3000);
+		WebDriverWaits.ClickOn(AppPreRequisitesUtils.AgencySetUpIconLbl);
 		Thread.sleep(12000);
 		WebDriverWaits.ScrollIntoView(AppPreRequisitesUtils.AuditTrial);
 		Thread.sleep(2000);
@@ -609,6 +613,7 @@ public class CRMCommonMethods {
 	
 	
 	public static void NavigateTo_TemplateManagement() throws InterruptedException {
+		
 		WebDriverWaits.ScrollIntoView(TemplateMangementUtils.TemplateManagementSideBarTab);
 		Thread.sleep(2000);
 		WebDriverWaits.ClickOn(TemplateMangementUtils.TemplateManagementSideBarTab);
@@ -618,12 +623,12 @@ public class CRMCommonMethods {
 	
 	
 	public static void AddTemplateFiles(String selector,String filePath) throws InterruptedException, AWTException {
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		WebDriverWaits.ScrollIntoView(By.xpath(selector));
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		WebElement adddocument = BrowsersInvoked.driver.findElement(By.xpath(selector));
 		adddocument.click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		RobotClass.RobotClassUploadMedia(filePath);
 		Thread.sleep(3000);
 		
@@ -671,5 +676,27 @@ public class CRMCommonMethods {
 		Thread.sleep(3000);
 		
 	}
+	
+	
+	public static void Navigate_To_NotificationMangement() throws InterruptedException {
+		
+		WebDriverWaits.ScrollIntoView(NotificationMangementUtils.NotificationMangementSideBar);
+		Thread.sleep(4000);
+		WebDriverWaits.ClickByJsExecuter(NotificationMangementUtils.NotificationMangementSideBar);
+		Thread.sleep(4000);
+		
+	}
+	
+	
+public static void Navigate_To_SLA() throws InterruptedException {
+		
+		WebDriverWaits.ScrollIntoView(SLAUtils.SLASideBar);
+		Thread.sleep(4000);
+		WebDriverWaits.ClickByJsExecuter(SLAUtils.SLASideBar);
+		Thread.sleep(4000);
+		
+	}
+	
+	
 
 }

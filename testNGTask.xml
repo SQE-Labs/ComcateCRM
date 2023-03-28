@@ -29,19 +29,19 @@
 				</methods>
 			</class> -->
 
-		<!--	<class name="TCsNewAgencySetup.AgencyCreation">
+			<class name="TCsNewAgencySetup.AgencyCreation">
 				<methods>
 					<include name="AgencyCreation_OpenCreateAgencyPopup" />
 					<include name="AgencyCreation_ConfigureCE" />
 					<include name="AgencyCreation_ConfigureCRM" />
 					<include name="AgencyCreation_VerifyNewAgencyCreation" />
 				</methods>
-			</class>-->
+			</class>
 
 			<class name="TCsNewAgencySetup.AppPreRequisites">
 				<methods>
 					<include name="AgencySetup_VerifyAppConfigurations" />
-					<!--<include name="AgencySetup_VerifyCreationOfLCFs" />
+					<include name="AgencySetup_VerifyCreationOfLCFs" />
 					<include name="AgencySetup_VerifyUploadedMapLayer" />
 					<include name="AgencySetup_VerifyUploadedAgencyBoundary" />
 					<include name="AgencySetup_VerifyUploadedAgencyParcelFile" />
@@ -56,8 +56,8 @@
 					<include name="AgencySetup_VerifyCreationOfCategories" />
 					<include name="AgencySetup_VerifySavedSubmissionSettings" />
 					<include name="AgencySetup_VerifySuccessfulDirectionToCCP" />
-					<include name="AgencySetup_VerifyCreationOf50PlusCases" />
-					<include name="AgencySetup_VerifyCreationOf50PlusSubmissions" />
+					<!--<include name="AgencySetup_VerifyCreationOf50PlusCases" />
+					<include name="AgencySetup_VerifyCreationOf50PlusSubmissions" /> -->
 					<include name="AgencySetup_VerifyCaseCreationWithEntityViolation" />
 					<include name="AgencySetup_VerifyCreateFinePopup"></include>
 					<include name="AgencySetup_VerifyFlatFineCreationDoNotAttachedNotices"></include>
@@ -69,7 +69,7 @@
 					<include name="AgencySetup_VerifyCreateFixedManualFlatFineLateFee"></include> 
 					<include name="AgencySetup_VerifyCreateOutStdManualFlatFineLateFee"></include>  
 					<include name="AgencySetup_VerifyInactivateActiveLateFee"></include>  
-					<include name="AgencySetup_VerifyActivateInActiveLateFee"></include> -->
+					<include name="AgencySetup_VerifyActivateInActiveLateFee"></include> 
 				</methods>
 			</class>
 			
@@ -97,6 +97,22 @@
 					<include name="AgencySetup_CreateNotifictionMultipleCriteriaDeliveryOption"></include> 
 					<include name="AgencySetup_CreateNotificationInactivateActiveNotificatiion"></include>
 					<include name="AgencySetup_CreateNotificationActivateInactiveNotificatiion"></include>
+				</methods>
+			</class>
+			
+			<class name="TCsNewAgencySetup.SLA"> 
+				<methods> 
+					<include name="AgencySetup_SLAPreRequisite"></include>
+					<include name="AgencySetup_CreateSLAPopupOpenAndClose"></include> 
+					<include name="AgencySetup_CreateSLAPopupValidatiions"></include> 
+					<include name="AgencySetup_CreateSLAAddRuleValidations"></include> 
+					<include name="AgencySetup_CreateSLA_AddRule"></include> 
+					<include name="AgencySetup_CreateSLA_EditAddRule"></include> 
+					<include name="AgencySetup_CreateSLA"></include>
+					<include name="AgencySetup_EditSLA"></include>
+					<include name="AgencySetup_ErrorMessageAppearCreatingExistingSLAName"></include> 
+					<include name="AgencySetup_InactivteActiveSLA"></include> 
+					<include name="AgencySetup_ActivateInactiveSLA"></include>
 				</methods>
 			</class>
 

@@ -32,7 +32,7 @@ public class TemplateManagement extends TemplateMangementUtils {
 	public static void TemplateMangement_CloseandOpenCreateTemplatePOpup() throws InterruptedException {
 		extentTest = extent.startTest(" TemplateMangement_CloseandOpenCreateTemplatePOpup ");
 		extentTest.setDescription(
-				"Verify that 'Create Template' popup opens up,when user clicks on 'Create Template' button,and close when click on 'Cancel' button");
+				"Verify that user is able to open and close the '' popup after clicking the '' and '' buttons on '' and '' pages respectively");
 		TemplateMangementUtils.TemplateMangement_CloseandOpenCreateTemplatePOpup();
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals(CrtTemplateHeader, ExpectedCrtTemplateHeader);
@@ -44,7 +44,7 @@ public class TemplateManagement extends TemplateMangementUtils {
 	public static void TemplateMangement_VerifyValidationsOnCreateTemplatePOpup() throws InterruptedException, AWTException {
 		extentTest = extent.startTest(" TemplateMangement_CloseandOpenCreateTemplatePOpup ");
 		extentTest.setDescription(
-				"Verify that appropriate validation messages appear, on clicking the 'Save' button when no/ data exceeding the max limit is entered in fields, on 'Create Template' popup");
+				"Verify that appropriate validation messages appears, on clicking the 'Save' button when no/ data exceeding the max limit is entered in fields, on 'Create Template' popup");
 //		Login.LoginAgencyStage();
 //		TemplateMangement_PreRequisite();
 		TemplateMangementUtils.TemplateMangement_VerifyValidationsOnCreateTemplatePOpup();
@@ -60,14 +60,15 @@ public class TemplateManagement extends TemplateMangementUtils {
 	public static void TemplateMangement_VerifyAdditionofMultipleDocTemplatePOpup() throws InterruptedException, AWTException {
 		extentTest = extent.startTest(" TemplateMangement_CloseandOpenCreateTemplatePOpup ");
 		extentTest.setDescription(
-				"Verify that user is able to add a single as well as multiple documents,after clicking on 'Add Related Documnets' button, on 'Create Template' popup. and delete the added documents");
-//		Login.LoginAgencyStage();
-//		TemplateMangement_PreRequisite();
+				"Verify that user is able to add/remove a single as well as multiple documents, on 'Create Template' popup");
+//	    Login.LoginAgencyStage();
+//	    TemplateMangement_PreRequisite();
 //		TemplateMangement_VerifyValidationsOnCreateTemplatePOpup();
 		
 		TemplateMangementUtils.TemplateMangement_VerifyAdditionofMultipleDocTemplatePOpup();
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals(filesCountCheck, true);
+		softAssert.assertEquals(filesAfterCountCheck, true);
 		softAssert.assertAll();
 	}
 	
@@ -75,7 +76,7 @@ public class TemplateManagement extends TemplateMangementUtils {
 	@Test(priority = 5)
 	public static void TemplateMangement_VerifyEmailPreviewPopDataAutoPopulated() throws InterruptedException, AWTException {
 		extentTest = extent.startTest(" TemplateMangement_VerifyEmailPreviewPopDataAutoPopulated ");
-		extentTest.setDescription("Verify that 'Preview Email Template' popup opens up and Data Population, when user clicks on 'Preview' button, on 'Create Template' popup.");
+		extentTest.setDescription("Verify that 'Preview Email Template' popup opens up with appropriate data, when user clicks 'Preview' button, on 'Create Template' popup.");
 		
 //		Login.LoginAgencyStage();
 //		TemplateMangement_PreRequisite();

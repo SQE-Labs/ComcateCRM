@@ -950,15 +950,19 @@ public class AppPreRequisitesUtils extends AgencyCreationUtils {
 //		CRMCommonMethods.NavigateTo_AgencySetup();
 //		CRMCommonMethods.NavigateTo_Fines();
 		InactivefineCountBefore = Integer.parseInt((WebDriverWaits.GetText(InactiveFines)).split(" ")[0]);
-		WebDriverWaits.ClickByJsExecuter(EditActiveFine);
+		WebDriverWaits.ScrollIntoView(EditActiveFine);
 		Thread.sleep(2000);
+		WebDriverWaits.ClickByJsExecuter(EditActiveFine);
+		Thread.sleep(4000);
 		activeFineLabel = driver.findElement(CrtFineLabelName).getAttribute("value");
 		WebDriverWaits.ScrollIntoView(InactiveFinebtn);
 		Thread.sleep(2000);
 		WebDriverWaits.ClickOn(InactiveFinebtn);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
+		WebDriverWaits.ScrollIntoView(EditSavebtn);
+		Thread.sleep(2000);
 		WebDriverWaits.ClickOn(EditSavebtn);
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 		List<String> allinactiveFineLabels = new ArrayList<>();
 		InactivefineCountafter = Integer.parseInt((WebDriverWaits.GetText(InactiveFines)).split(" ")[0]);
 		driver.findElements(InactiveFineGridData)
@@ -988,7 +992,7 @@ public static void AgencySetup_VerifyActivateInactiveFines() throws InterruptedE
 		WebDriverWaits.ClickOn(ActiveFinetoogle);
 		Thread.sleep(1000);
 		WebDriverWaits.ClickOn(EditSavebtn);
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 		List<String> allactiveFineLabels = new ArrayList<>();
 		activefineCountafter = Integer.parseInt((WebDriverWaits.GetText(ActiveFines)).split(" ")[0]);
 		driver.findElements(ActiveFineGridData)

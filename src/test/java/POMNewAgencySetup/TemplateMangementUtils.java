@@ -178,11 +178,16 @@ public class TemplateMangementUtils extends AgencyCreationUtils {
 			
 			public static String AddDocument = "//label[text()='Add Related Documents']"; 
 			public static String addedFiles = "//div[@class='chip__body']";
+			public static String removeFiles = "//button[@class='chip__close-button']";
+			
 			public static By AddedFiles = By.xpath(addedFiles);
+			public static By RemoveFiles = By.xpath(removeFiles);
 			public static int filescount ; 
 			public static Boolean filesCountCheck ; 
 			public static String  DocumentJellyFish = "Jellyfish_11zon.jpg";
 			public static String DocumentPanda = "Panda_11zon.jpg";
+			public static Boolean filesAfterCountCheck;
+			public static int filescountAf;
 	 
 			public static void TemplateMangement_VerifyAdditionofMultipleDocTemplatePOpup () throws InterruptedException, AWTException{
 				
@@ -200,6 +205,19 @@ public class TemplateMangementUtils extends AgencyCreationUtils {
 				Thread.sleep(3000); 
 				filescount = driver.findElements(AddedFiles).size();
 				filesCountCheck = filescount == 2;
+				WebDriverWaits.ClickByJsExecuter(RemoveFiles);
+				Thread.sleep(2000);
+				
+				filescountAf = driver.findElements(AddedFiles).size();
+				filesAfterCountCheck = filescountAf < filescount ;
+				String path_1 = System.getProperty("user.dir") + "\\TestData\\Jellyfish_11zon.jpg";
+				Thread.sleep(2000);
+				System.out.println(path_1);
+				CRMCommonMethods.AddTemplateFiles(AddDocument,path_1);
+				
+				Thread.sleep(3000);
+				
+				
 			}
 	 
 			

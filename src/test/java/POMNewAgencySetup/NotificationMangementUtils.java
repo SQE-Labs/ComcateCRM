@@ -84,6 +84,7 @@ public class NotificationMangementUtils extends AgencyCreationUtils {
 	public static String selectAttribute = "//div[@class='Select-menu-outer']//div[@aria-label='Submission Category']";
 	public static String selectOperator = "//div[@class='Select-menu-outer']//div[@aria-label='Equals']";
 	public static String selectValue = "(//li[@class='multi']//input[@type='checkbox'])[1]";
+	public static String selectCatValue2 = "(//li[@class='multi']//input[@type='checkbox'])[2]";
 	public static String sendToOption = "//div[@class='Select-menu-outer']//div[@aria-label='Send To']";
 	public static String selectUseEmailTemp = "//div[@class='Select-menu-outer']//div[@aria-label='Submission Created']";
 	public static String selectedAttribute = "(//input[@name='attribute']//parent::div//span)[1]";
@@ -109,9 +110,10 @@ public class NotificationMangementUtils extends AgencyCreationUtils {
 	public static String selectUseEmailTemp2 = "//div[@class='Select-menu-outer']//div[@aria-label='Notice Issued']";
 	public static String reciptentOption2 = "//div[@class='Select-menu-outer']//div[@aria-label='Collaborator']";
 	
-	
 	//public static By ActiveTogglebtn = By.xpath(activeTooglebtn);
 	public static By CaseNavigation = By.xpath(caseNavigation);
+//	public static By SelectValu2 = By.xpath(selectValu2);
+	public static By SelectCatValue2 = By.xpath(selectCatValue2);
     public static By NotificationMangementSideBar = By.xpath(notificationMangementSideBar);
     public static By NotificationHeaderLbl = By.xpath(notificationHeaderLbl);
     public static By CreateNotificationbtn = By.xpath(createNotificationbtn);

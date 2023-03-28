@@ -34,7 +34,7 @@ public class NotificationManagement extends NotificationMangementUtils {
 	@Test(priority = 1)
 	public static void AgencySetup_CreateNotificationPopCloseOpenAndValidations() throws InterruptedException {
 		extentTest = extent.startTest(" AgencySetup_CreateNotificationPopCloseOpenAndValidations ");
-	    extentTest.setDescription(" Verify create Notification Pop Up Close and Open,validation messages on 'Create Notification Pop Up'");
+	    extentTest.setDescription(" Verify that user is able to open and close the 'Create Notification' popup after clicking the 'Create Notification' and 'Cancel' buttons on 'Notification' and 'Create Notification' pages respectively");
 //	    Login.LoginAgencyStage();
 //	    AgencySetup_NotificationPreRequisiteAndDefaultNotificationCount();
 	    
@@ -52,7 +52,7 @@ public class NotificationManagement extends NotificationMangementUtils {
 	@Test(priority = 2)
 	public static void AgencySetup_CreateNotificationAddRulePopupValidations() throws InterruptedException {
 		extentTest = extent.startTest(" AgencySetup_CreateNotificationAddRulePopupValidations ");
-	    extentTest.setDescription(" Verify that user is able to open and close 'Create Rule' pop up when click 'Add Rule button 'and Validation message on 'Create Rule' popup when click on 'Create Rule' button");
+	    extentTest.setDescription("Verify that user is able to open and close the 'Create Rule' popup after clicking the 'Add Rule' and 'Cancel' buttons on 'Create Rule' and 'Create Rule' pages respectively");
 //	    Login.LoginAgencyStage();
 //	    AgencySetup_NotificationPreRequisiteAndDefaultNotificationCount();
 //	    AgencySetup_CreateNotificationPopCloseOpenAndValidations();

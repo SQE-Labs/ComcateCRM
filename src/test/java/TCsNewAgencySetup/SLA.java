@@ -16,7 +16,7 @@ public class SLA extends SLAUtils {
 	public static void AgencySetup_SLAPreRequisite() throws InterruptedException {
 		extentTest = extent.startTest(" AgencySetup_SLAPreRequisite ");
 	    extentTest.setDescription(" Navigate to SLA Page");
-	    Login.LoginAgencyStage();
+//	    Login.LoginAgencyStage();
 	    SLAUtils.AgencySetup_SLAPreRequisite();
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals(ActualSLAHeader, expectedSLAHeader);
@@ -27,9 +27,7 @@ public class SLA extends SLAUtils {
 	@Test(priority = 1)
 	public static void AgencySetup_CreateSLAPopupOpenAndClose() throws InterruptedException {
 		extentTest = extent.startTest(" AgencySetup_CreateSLAPopupOpenAndClose ");
-	    extentTest.setDescription("Verify that user is able Close and Open 'Create SLA' pop up when click on 'Create SLA' and 'Cancel' button");
-//	    Login.LoginAgencyStage();
-//	    SLAUtils.AgencySetup_SLAPreRequisite();
+	    extentTest.setDescription("Verify that user is able open and close 'Create SLA' pop up when click on 'Create SLA' and 'Cancel' button on  'SLA Page ' and 'Create SLA' page respectively");
 	    SLAUtils.AgencySetup_CreateSLAPopupOpenAndClose();
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals(actualSLApopHeader, expectedSLApopHeader);
@@ -39,18 +37,14 @@ public class SLA extends SLAUtils {
 	
 	
 	@Test(priority = 2)
-	public static void AgencySetup_CreateSLAPopupValidatiionsAndCreateRulePopup() throws InterruptedException {
-		extentTest = extent.startTest(" AgencySetup_CreateSLAPopupOpenAndClose ");
-	    extentTest.setDescription("Verify that Validation message appear when click on 'Create SLA' button with no data enterd and 'Add Rule' pop is open and closed when click"
-	    		+ "on 'Add Rule' button and 'Cancel' button on 'Create Rule' pop up");
-//	    Login.LoginAgencyStage();
-//	    SLAUtils.AgencySetup_SLAPreRequisite();
-	    SLAUtils.AgencySetup_CreateSLAPopupValidatiionsAndCreateRulePopup();
+	public static void AgencySetup_CreateSLAPopupValidatiions() throws InterruptedException {
+		extentTest = extent.startTest(" AgencySetup_CreateSLAPopupValidatiions ");
+	    extentTest.setDescription("Verify that Validation message appears when click on 'Create SLA' button with no data,rule added on 'Create SLA' page");
+	    SLAUtils.AgencySetup_CreateSLAPopupValidatiions();
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals(actualNameValidSLA, expectedNameValidSLA);
 		softAssert.assertEquals(actualGlobalValidSLA, expectedGlobalValidSLA);
-		softAssert.assertEquals(actualcrtRuleHeader1 == 0, true);
-		softAssert.assertEquals(actualcrtRuleHeader, expectedCrtRuleHeader);
+
 		softAssert.assertAll();
 	}
 	
@@ -59,11 +53,10 @@ public class SLA extends SLAUtils {
 	public static void AgencySetup_CreateSLAAddRuleValidations() throws InterruptedException {
 		extentTest = extent.startTest(" AgencySetup_CreateSLAAddRuleValidations ");
 	    extentTest.setDescription("Verify that Add rule validation message appear when click on 'Add Rule' button on 'Create Rule' pop up ");
-//	    Login.LoginAgencyStage();
-//	    SLAUtils.AgencySetup_SLAPreRequisite();
-//	    SLAUtils.AgencySetup_CreateSLAPopupValidatiionsAndCreateRulePopup();
 	    SLAUtils.AgencySetup_CreateSLAAddRuleValidations();
 		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals(actualcrtRuleHeader1 == 0, true);
+		softAssert.assertEquals(actualcrtRuleHeader, expectedCrtRuleHeader);
 		softAssert.assertEquals(actualAddRuleAttributValidation, expectedAddRuleAttributValidation);
 		softAssert.assertEquals(actualAddRuleOperatorValidation, expectedAddRuleOperatorValidation);
 		softAssert.assertEquals(actualAddRuleValueValidation, expectedAddRuleValueValidation);
@@ -80,11 +73,7 @@ public class SLA extends SLAUtils {
 	@Test(priority = 4)
 	public static void AgencySetup_CreateSLA_AddRule() throws InterruptedException {
 		extentTest = extent.startTest(" AgencySetup_CreateSLAAddRuleValidations ");
-	    extentTest.setDescription("Verify that Add rule validation message appear when click on 'Add Rule' button on 'Create Rule' pop up ");
-	    Login.LoginAgencyStage();
-	    SLAUtils.AgencySetup_SLAPreRequisite();
-	    SLAUtils.AgencySetup_CreateSLAPopupValidatiionsAndCreateRulePopup();
-	    SLAUtils.AgencySetup_CreateSLAAddRuleValidations();
+	    extentTest.setDescription("Verify that user is able to add new rule  on 'Create SLA' page");
 	    SLAUtils.AgencySetup_CreateSLA_AddRule();
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals(AddedRuleDesc.contains(selectedCatVal),true);
@@ -95,33 +84,94 @@ public class SLA extends SLAUtils {
 	}  
 	
 	
+	
 	@Test(priority = 5)
-	public static void AgencySetup_CreateSLA() throws InterruptedException {
-		extentTest = extent.startTest(" AgencySetup_CreateSLA ");
-	    extentTest.setDescription("Verify that user is able to add SLA on 'SLA' page");
-	    Login.LoginAgencyStage();
-	    SLAUtils.AgencySetup_SLAPreRequisite();
-	    SLAUtils.AgencySetup_CreateSLAPopupValidatiionsAndCreateRulePopup();
-	    SLAUtils.AgencySetup_CreateSLAAddRuleValidations();
-	    SLAUtils.AgencySetup_CreateSLA_AddRule();
-	    SLAUtils.AgencySetup_CreateSLA();
+	public static void AgencySetup_CreateSLA_EditAddRule() throws InterruptedException {
+		extentTest = extent.startTest(" AgencySetup_CreateSLA_EditAddRule ");
+	    extentTest.setDescription("Verify that  Edit the rule on 'Create SLA' page");
+//	    AgencySetup_SLAPreRequisite();
+//	    AgencySetup_CreateSLAPopupOpenAndClose();
+//	    AgencySetup_CreateSLAPopupValidatiions();
+//	    AgencySetup_CreateSLAAddRuleValidations();
+//	    AgencySetup_CreateSLA_AddRule();
+	    SLAUtils.AgencySetup_CreateSLA_EditAddRule();
 		SoftAssert softAssert = new SoftAssert();
-		softAssert.assertEquals(AddedRuleDesc.contains(selectedCatVal),true);
-		softAssert.assertEquals(AddedRuleDesc.contains(selectedAttriVal),true);
+		softAssert.assertEquals(EdditedRuleDesc.contains(selectedCatVal),true);
+		
 		softAssert.assertAll();
 		
 		
 	}
 	
+	@Test(priority = 6)
+	public static void AgencySetup_CreateSLA() throws InterruptedException {
+		extentTest = extent.startTest(" AgencySetup_CreateSLA ");
+	    extentTest.setDescription("Verify that user is able to add SLA on 'SLA' page");
+//	    AgencySetup_SLAPreRequisite();
+//	    AgencySetup_CreateSLAPopupOpenAndClose();
+//	    AgencySetup_CreateSLAPopupValidatiions();
+//	    AgencySetup_CreateSLAAddRuleValidations();
+//	    AgencySetup_CreateSLA_AddRule();
+//	    SLAUtils.AgencySetup_CreateSLA_EditAddRule();
+	    SLAUtils.AgencySetup_CreateSLA();
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals(newAddedSLA,sLALableName);
+		softAssert.assertEquals(AfteractiveSLACount,BeforeactiveSLACount+1);
+		softAssert.assertAll();
+		
+		
+	}
 	
+	@Test(priority = 7)
+	public static void AgencySetup_EditSLA() throws InterruptedException {
+		extentTest = extent.startTest(" AgencySetup_EditSLA ");
+	    extentTest.setDescription("Verify that user is able to edit SLA on 'SLA' page");
+//	    AgencySetup_SLAPreRequisite();
+	    SLAUtils.AgencySetup_EditSLA();
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals(newEditSLA,sLALableName);
+		softAssert.assertEquals(EditsLADesription,sLADesription);
+		softAssert.assertAll();
 	
-//	@Test(priority = )
-//	public static void AgencySetup_VerifyAllLinksForCEDashboard() throws InterruptedException {
-//		extentTest = extent.startTest(" AgencySetup_VerifyAllLinksForCEDashboard ");
-//	    extentTest.setDescription(" Verify that all links under 'Cases', 'Inspections' & 'Notices' section appear, on CE Dashboard. ");
-//	AppPreRequisitesUtils.AgencySetup_VerifyAllLinksForCEDashboard();
-//		SoftAssert softAssert = new SoftAssert();
-//		softAssert.assertAll();
-//	}
 
+
+}
+	
+	
+	@Test(priority = 8)
+	public static void AgencySetup_ErrorMessageAppearCreatingExistingSLAName() throws InterruptedException {
+		extentTest = extent.startTest(" AgencySetup_ErrorMessageAppearCreatingExistingSLAName ");
+	    extentTest.setDescription("Verify that error message appears & Template does not get created, when user clicks on 'Save' button, after entering existing data in 'Name' field, on 'Create SLA' popup.");
+//	    AgencySetup_SLAPreRequisite();
+	    SLAUtils.AgencySetup_ErrorMessageAppearCreatingExistingSLAName();
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals(actualErrorMsg,expectedduplicatErrorMessage);
+		softAssert.assertAll();
+}
+	
+	@Test(priority = 9)
+	public static void AgencySetup_InactivteActiveSLA() throws InterruptedException {
+		extentTest = extent.startTest(" AgencySetup_ErrorMessageAppearCreatingExistingSLAName ");
+	    extentTest.setDescription("Verify that user able to Inactivate the active SLA on 'SLA' page");
+//	    AgencySetup_SLAPreRequisite();
+	    SLAUtils.AgencySetup_InactivteActiveSLA();
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals(inactiveSLACountBefore + 1,inactiveSLACount);
+		softAssert.assertEquals(activeSLAName,inactivateSLA);
+		softAssert.assertAll();
+}
+	
+	
+	@Test(priority = 10)
+	public static void AgencySetup_ActivateInactiveSLA() throws InterruptedException {
+		extentTest = extent.startTest(" AgencySetup_ActivateInactiveSLA ");
+	    extentTest.setDescription("Verify that user able to Activate the Inactive SLA on 'SLA' page");
+//	    AgencySetup_SLAPreRequisite();
+	    SLAUtils.AgencySetup_ActivateInactiveSLA();
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals(activeSLACountBefore + 1,activeSLACount);
+		softAssert.assertEquals(activeSLAName,inactivateSLA);
+		softAssert.assertAll();
+}
+	
 }
